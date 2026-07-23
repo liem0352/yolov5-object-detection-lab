@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" role="img" aria-labelledby="arch-title arch-desc">
+  <title id="arch-title">YOLOv5 模型架构</title>
+  <desc id="arch-desc">YOLOv5s 模型三大组件:Backbone 使用 CSPDarknet 提取特征,Neck 使用 PANet 进行多尺度特征融合,Head 在三个尺度上输出检测预测。</desc>
+
+  <!-- 画布背景 -->
+  <rect width="1200" height="320" fill="#0B0F14" rx="20"/>
+
+  <!-- 标题区 -->
+  <g font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' text-rendering="geometricPrecision">
+    <text x="48" y="50" font-size="26" font-weight="700" fill="#E8E4D9">模型架构</text>
+    <text x="48" y="76" font-size="15" fill="#9CA3AF">yolov5s 三段式结构:Backbone 提特征 - Neck 融多尺度 - Head 出检测</text>
+  </g>
+
+  <!-- 三大模块 -->
+  <g transform="translate(0 108)">
+    <!-- 模块 1: Backbone -->
+    <g transform="translate(60 0)">
+      <rect width="320" height="160" rx="10" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <rect x="0" y="0" width="320" height="4" rx="2" fill="#E8B547"/>
+      <text x="24" y="36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#E8B547" letter-spacing="1.2">BACKBONE</text>
+      <text x="24" y="68" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="22" font-weight="700" fill="#E8E4D9" text-rendering="geometricPrecision">CSPDarknet</text>
+      <line x1="24" y1="84" x2="296" y2="84" stroke="#2A2F36" stroke-width="1"/>
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#9CA3AF" text-rendering="geometricPrecision">
+        <text x="24" y="108">Focus / Conv</text>
+        <text x="24" y="128">C3  x 4</text>
+        <text x="24" y="148">SPPF</text>
+      </g>
+      <!-- 右侧特征图缩进示意 -->
+      <g transform="translate(220 100)" fill="none" stroke="#2A2F36" stroke-width="1">
+        <rect x="0" y="0" width="20" height="40" rx="1"/>
+        <rect x="28" y="8" width="20" height="32" rx="1"/>
+        <rect x="56" y="16" width="20" height="24" rx="1" stroke="#E8B547" opacity="0.6"/>
+      </g>
+    </g>
+
+    <!-- 箭头 1 -->
+    <g transform="translate(392 70)" fill="#E8B547">
+      <line x1="0" y1="0" x2="56" y2="0" stroke="#E8B547" stroke-width="1.6"/>
+      <path d="M 56 -5 L 66 0 L 56 5 Z"/>
+      <text x="28" y="-12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">特征图</text>
+    </g>
+
+    <!-- 模块 2: Neck -->
+    <g transform="translate(470 0)">
+      <rect width="320" height="160" rx="10" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <rect x="0" y="0" width="320" height="4" rx="2" fill="#E8B547"/>
+      <text x="24" y="36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#E8B547" letter-spacing="1.2">NECK</text>
+      <text x="24" y="68" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="22" font-weight="700" fill="#E8E4D9" text-rendering="geometricPrecision">PANet</text>
+      <line x1="24" y1="84" x2="296" y2="84" stroke="#2A2F36" stroke-width="1"/>
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#9CA3AF" text-rendering="geometricPrecision">
+        <text x="24" y="108">FPN  top-down</text>
+        <text x="24" y="128">PAN  bottom-up</text>
+        <text x="24" y="148">C3  融合</text>
+      </g>
+      <!-- 右侧多尺度融合示意 -->
+      <g transform="translate(220 96)" fill="none" stroke-width="1.2">
+        <path d="M 0 8 L 76 8" stroke="#2A2F36"/>
+        <path d="M 0 28 L 76 28" stroke="#2A2F36"/>
+        <path d="M 0 48 L 76 48" stroke="#2A2F36"/>
+        <path d="M 0 8 L 0 48" stroke="#E8B547" stroke-dasharray="2 2"/>
+        <circle cx="0" cy="8" r="2" fill="#E8B547"/>
+        <circle cx="0" cy="28" r="2" fill="#E8B547"/>
+        <circle cx="0" cy="48" r="2" fill="#E8B547"/>
+      </g>
+    </g>
+
+    <!-- 箭头 2 -->
+    <g transform="translate(802 70)" fill="#E8B547">
+      <line x1="0" y1="0" x2="56" y2="0" stroke="#E8B547" stroke-width="1.6"/>
+      <path d="M 56 -5 L 66 0 L 56 5 Z"/>
+      <text x="28" y="-12" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">融合特征</text>
+    </g>
+
+    <!-- 模块 3: Head -->
+    <g transform="translate(880 0)">
+      <rect width="260" height="160" rx="10" fill="#1A1F26" stroke="#4A9EFF" stroke-width="1.4"/>
+      <rect x="0" y="0" width="260" height="4" rx="2" fill="#4A9EFF"/>
+      <text x="24" y="36" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#4A9EFF" letter-spacing="1.2">HEAD</text>
+      <text x="24" y="68" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="22" font-weight="700" fill="#E8E4D9" text-rendering="geometricPrecision">Detect</text>
+      <line x1="24" y1="84" x2="236" y2="84" stroke="#2A2F36" stroke-width="1"/>
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#9CA3AF" text-rendering="geometricPrecision">
+        <text x="24" y="108">P3  stride 8</text>
+        <text x="24" y="128">P4  stride 16</text>
+        <text x="24" y="148">P5  stride 32</text>
+      </g>
+      <!-- 右侧三尺度输出示意 -->
+      <g transform="translate(190 100)" fill="none" stroke="#4A9EFF" stroke-width="1.2">
+        <rect x="0" y="0" width="14" height="14" rx="1"/>
+        <rect x="22" y="6" width="14" height="14" rx="1"/>
+        <rect x="44" y="12" width="14" height="14" rx="1"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="600" y="300" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#6B7280" text-anchor="middle">COCO 80 类 · anchor-based · 3 尺度输出 · 640 输入分辨率</text>
+</svg>

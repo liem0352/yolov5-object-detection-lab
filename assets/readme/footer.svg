@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" width="100%" role="img" aria-labelledby="foot-title foot-desc">
+  <title id="foot-title">页脚</title>
+  <desc id="foot-desc">README 制作签名与许可证信息。视觉系统由 beautify-github-readme skill 设计,代码与权重遵循 Ultralytics AGPL-3.0 许可。</desc>
+
+  <!-- 画布背景 -->
+  <rect width="1200" height="100" fill="#0B0F14" rx="16"/>
+
+  <!-- 左侧:README MADE WITH 签名 -->
+  <g transform="translate(48 36)" text-rendering="geometricPrecision">
+    <!-- 检测框 motif 小标 -->
+    <rect x="0" y="6" width="20" height="20" fill="none" stroke="#E8B547" stroke-width="1.4"/>
+    <rect x="0" y="0" width="14" height="6" fill="#4A9EFF"/>
+
+    <text x="32" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280" letter-spacing="0.8">README MADE WITH</text>
+    <text x="32" y="44" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8E4D9">beautify-github-readme</text>
+  </g>
+
+  <!-- 中间分隔线 -->
+  <line x1="600" y1="28" x2="600" y2="72" stroke="#2A2F36" stroke-width="1"/>
+
+  <!-- 右侧:License + 作者 -->
+  <g transform="translate(624 36)" text-rendering="geometricPrecision">
+    <text x="0" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280" letter-spacing="0.8">LICENSE</text>
+    <text x="0" y="44" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8E4D9">AGPL-3.0  ·  Ultralytics YOLOv5</text>
+  </g>
+
+  <!-- 右端:作者 -->
+  <g transform="translate(1060 36)" text-rendering="geometricPrecision">
+    <text x="92" y="22" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280" letter-spacing="0.8" text-anchor="end">AUTHOR</text>
+    <text x="92" y="44" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8B547" text-anchor="end">liem</text>
+  </g>
+</svg>

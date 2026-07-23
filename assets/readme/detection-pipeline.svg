@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" role="img" aria-labelledby="pipe-title pipe-desc">
+  <title id="pipe-title">YOLOv5 检测流水线</title>
+  <desc id="pipe-desc">从输入图像到检测输出的五阶段流水线:输入图像、预处理、YOLOv5 推理、NMS 非极大值抑制、检测框输出。</desc>
+
+  <!-- 画布背景 -->
+  <rect width="1200" height="360" fill="#0B0F14" rx="20"/>
+
+  <!-- 标题区 -->
+  <g font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' text-rendering="geometricPrecision">
+    <text x="48" y="56" font-size="26" font-weight="700" fill="#E8E4D9">检测流水线</text>
+    <text x="48" y="82" font-size="15" fill="#9CA3AF">输入图像到检测框输出的五阶段路径</text>
+  </g>
+
+  <!-- 流水线卡片 + 箭头 -->
+  <g transform="translate(0 120)">
+    <!-- 阶段 1: 输入图像 -->
+    <g transform="translate(80 0)">
+      <rect width="176" height="180" rx="8" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <!-- 图标:图像帧 -->
+      <g transform="translate(70 24)">
+        <rect width="36" height="28" rx="2" fill="none" stroke="#E8B547" stroke-width="1.4"/>
+        <circle cx="12" cy="10" r="3" fill="#E8B547"/>
+        <path d="M 6 22 L 16 14 L 24 20 L 30 16 L 30 22 Z" fill="#E8B547" opacity="0.5"/>
+      </g>
+      <text x="88" y="92" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8E4D9" text-anchor="middle" text-rendering="geometricPrecision">输入图像</text>
+      <text x="88" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">JPG / PNG</text>
+      <line x1="20" y1="132" x2="156" y2="132" stroke="#2A2F36" stroke-width="1"/>
+      <text x="88" y="154" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="12" fill="#9CA3AF" text-anchor="middle">test_images/</text>
+    </g>
+
+    <!-- 箭头 1 -->
+    <g transform="translate(264 80)" fill="#E8B547">
+      <line x1="0" y1="0" x2="32" y2="0" stroke="#E8B547" stroke-width="1.6"/>
+      <path d="M 32 -5 L 40 0 L 32 5 Z"/>
+    </g>
+
+    <!-- 阶段 2: 预处理 -->
+    <g transform="translate(316 0)">
+      <rect width="176" height="180" rx="8" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <!-- 图标:resize -->
+      <g transform="translate(70 24)" stroke="#E8B547" stroke-width="1.4" fill="none">
+        <rect x="0" y="0" width="22" height="22" rx="2"/>
+        <rect x="14" y="6" width="22" height="22" rx="2" fill="#0B0F14"/>
+        <line x1="22" y1="0" x2="36" y2="0" stroke-dasharray="2 2"/>
+        <line x1="0" y1="28" x2="0" y2="34" stroke-dasharray="2 2"/>
+      </g>
+      <text x="88" y="92" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8E4D9" text-anchor="middle" text-rendering="geometricPrecision">预处理</text>
+      <text x="88" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">letterbox</text>
+      <line x1="20" y1="132" x2="156" y2="132" stroke="#2A2F36" stroke-width="1"/>
+      <text x="88" y="154" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="12" fill="#9CA3AF" text-anchor="middle">resize 640 + norm</text>
+    </g>
+
+    <!-- 箭头 2 -->
+    <g transform="translate(500 80)" fill="#E8B547">
+      <line x1="0" y1="0" x2="32" y2="0" stroke="#E8B547" stroke-width="1.6"/>
+      <path d="M 32 -5 L 40 0 L 32 5 Z"/>
+    </g>
+
+    <!-- 阶段 3: YOLOv5 推理(高亮) -->
+    <g transform="translate(552 0)">
+      <rect width="176" height="180" rx="8" fill="#1A1F26" stroke="#E8B547" stroke-width="1.4"/>
+      <!-- 图标:网络层 -->
+      <g transform="translate(70 24)" stroke="#E8B547" stroke-width="1.4" fill="none">
+        <rect x="0" y="0" width="36" height="6" rx="1"/>
+        <rect x="4" y="11" width="28" height="6" rx="1" fill="#E8B547" opacity="0.3"/>
+        <rect x="8" y="22" width="20" height="6" rx="1"/>
+      </g>
+      <text x="88" y="92" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8B547" text-anchor="middle" text-rendering="geometricPrecision">YOLOv5 推理</text>
+      <text x="88" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">yolov5s.pt</text>
+      <line x1="20" y1="132" x2="156" y2="132" stroke="#2A2F36" stroke-width="1"/>
+      <text x="88" y="154" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="12" fill="#9CA3AF" text-anchor="middle">前向 + 候选框</text>
+    </g>
+
+    <!-- 箭头 3 -->
+    <g transform="translate(736 80)" fill="#E8B547">
+      <line x1="0" y1="0" x2="32" y2="0" stroke="#E8B547" stroke-width="1.6"/>
+      <path d="M 32 -5 L 40 0 L 32 5 Z"/>
+    </g>
+
+    <!-- 阶段 4: NMS -->
+    <g transform="translate(788 0)">
+      <rect width="176" height="180" rx="8" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <!-- 图标:重叠框去重 -->
+      <g transform="translate(70 24)" stroke-width="1.4" fill="none">
+        <rect x="0" y="0" width="22" height="22" rx="2" stroke="#EB5757" stroke-dasharray="3 2"/>
+        <rect x="10" y="6" width="22" height="22" rx="2" stroke="#E8B547"/>
+      </g>
+      <text x="88" y="92" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="16" font-weight="600" fill="#E8E4D9" text-anchor="middle" text-rendering="geometricPrecision">NMS</text>
+      <text x="88" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">IoU 0.45</text>
+      <line x1="20" y1="132" x2="156" y2="132" stroke="#2A2F36" stroke-width="1"/>
+      <text x="88" y="154" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="12" fill="#9CA3AF" text-anchor="middle">非极大值抑制</text>
+    </g>
+
+    <!-- 箭头 4 -->
+    <g transform="translate(972 80)" fill="#4A9EFF">
+      <line x1="0" y1="0" x2="32" y2="0" stroke="#4A9EFF" stroke-width="1.6"/>
+      <path d="M 32 -5 L 40 0 L 32 5 Z"/>
+    </g>
+
+    <!-- 阶段 5: 检测输出(冷蓝高亮) -->
+    <g transform="translate(1024 0)">
+      <rect width="96" height="180" rx="8" fill="#1A1F26" stroke="#4A9EFF" stroke-width="1.4"/>
+      <!-- 图标:检测框 -->
+      <g transform="translate(30 24)">
+        <rect width="36" height="28" rx="2" fill="none" stroke="#4A9EFF" stroke-width="1.4"/>
+        <rect x="0" y="-6" width="22" height="8" fill="#4A9EFF"/>
+      </g>
+      <text x="48" y="92" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="15" font-weight="600" fill="#4A9EFF" text-anchor="middle" text-rendering="geometricPrecision">检测输出</text>
+      <text x="48" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="middle">runs/detect</text>
+      <line x1="12" y1="132" x2="84" y2="132" stroke="#2A2F36" stroke-width="1"/>
+      <text x="48" y="154" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="11" fill="#9CA3AF" text-anchor="middle">bbox + 类别 + conf</text>
+    </g>
+  </g>
+
+  <!-- 底部说明 -->
+  <text x="600" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#6B7280" text-anchor="middle">5 stages · end-to-end inference path</text>
+</svg>

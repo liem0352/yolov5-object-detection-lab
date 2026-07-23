@@ -1,45 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" role="img" aria-labelledby="hero-title hero-desc">
   <title id="hero-title">YOLOv5 目标检测实训</title>
-  <desc id="hero-desc">基于 YOLOv5 的多场景图片目标检测实践,使用 yolov5s 预训练权重,包含街道、室内、自然等场景的检测结果可视化。</desc>
+  <desc id="hero-desc">基于 YOLOv5 的多场景图片目标检测实践,使用 yolov5s 预训练权重,包含街道、室内、自然等场景的检测结果可视化。右侧为典型检测框阵列示意,包含类别标签与置信度。</desc>
 
-  <!-- Canvas background -->
+  <!-- 画布背景 -->
   <rect width="1200" height="360" fill="#0B0F14" rx="26"/>
 
-  <!-- Left: title block -->
-  <g transform="translate(56 48)" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' text-rendering="geometricPrecision">
-    <text x="0" y="18" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9CA3AF" letter-spacing="1.2">COMPUTER VISION · YOLOv5</text>
-    <text x="0" y="74" font-size="44" font-weight="700" fill="#E8E4D9">YOLOv5 目标检测实训</text>
-    <text x="0" y="110" font-size="18" fill="#9CA3AF">多场景图片检测 · yolov5s 预训练权重 · 结果可视化</text>
-    <text x="0" y="140" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#9CA3AF">Python 3.13 · PyTorch · Ultralytics · 场景 5+</text>
+  <!-- 细微网格底纹(模拟标注画布) -->
+  <g stroke="#1A1F26" stroke-width="1" opacity="0.7">
+    <line x1="56" y1="300" x2="1144" y2="300"/>
   </g>
 
-  <!-- Right: simulated detection image with bounding boxes -->
+  <!-- 左侧:标题区 -->
+  <g transform="translate(56 60)" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' text-rendering="geometricPrecision">
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280" letter-spacing="1.4">YOLOv5 OBJECT DETECTION LAB</text>
+    <text x="0" y="58" font-size="46" font-weight="700" fill="#E8E4D9" letter-spacing="-0.5">YOLOv5 目标检测实训</text>
+    <text x="0" y="94" font-size="18" fill="#9CA3AF">多场景图片检测 - yolov5s 预训练权重 - 结果可视化</text>
+    <text x="0" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#E8B547">Python 3.13  ·  PyTorch  ·  Ultralytics  ·  COCO 80 类</text>
+  </g>
+
+  <!-- 右侧:检测框阵列 motif(模拟一张被检测的街景图) -->
   <g transform="translate(720 40)">
-    <!-- Image frame -->
+    <!-- 图像帧 -->
     <rect width="424" height="280" rx="4" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
 
-    <!-- Faint scene hints to suggest a real photo being detected -->
-    <rect x="0" y="210" width="424" height="70" fill="#161A20" opacity="0.6"/>
-    <line x1="0" y1="210" x2="424" y2="210" stroke="#2A2F36" stroke-width="1" opacity="0.5"/>
-    <rect x="150" y="150" width="50" height="60" fill="#1D2229" opacity="0.5"/>
-    <rect x="350" y="160" width="44" height="50" fill="#1D2229" opacity="0.5"/>
+    <!-- 场景暗示色块(模拟照片内容) -->
+    <rect x="0" y="200" width="424" height="80" fill="#14181E"/>
+    <rect x="0" y="200" width="424" height="80" fill="#1D2229" opacity="0.5"/>
+    <line x1="0" y1="200" x2="424" y2="200" stroke="#2A2F36" stroke-width="1" opacity="0.6"/>
+    <rect x="40" y="120" width="60" height="80" fill="#1D2229" opacity="0.45"/>
+    <rect x="280" y="130" width="80" height="70" fill="#1D2229" opacity="0.45"/>
+    <rect x="180" y="100" width="50" height="100" fill="#161A20" opacity="0.6"/>
 
-    <!-- Detection box 1: person -->
-    <rect x="20" y="30" width="120" height="180" fill="none" stroke="#E8B547" stroke-width="1.5"/>
-    <rect x="20" y="14" width="80" height="16" fill="#4A9EFF"/>
-    <text x="24" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF">person 0.87</text>
+    <!-- 检测框 1: person -->
+    <rect x="36" y="44" width="68" height="156" fill="none" stroke="#E8B547" stroke-width="1.6"/>
+    <rect x="36" y="28" width="86" height="16" fill="#4A9EFF"/>
+    <text x="42" y="40" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF" text-rendering="geometricPrecision">person 0.87</text>
 
-    <!-- Detection box 2: car -->
-    <rect x="180" y="60" width="100" height="120" fill="none" stroke="#E8B547" stroke-width="1.5"/>
-    <rect x="180" y="44" width="60" height="16" fill="#4A9EFF"/>
-    <text x="184" y="56" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF">car 0.92</text>
+    <!-- 检测框 2: car -->
+    <rect x="160" y="92" width="104" height="108" fill="none" stroke="#E8B547" stroke-width="1.6"/>
+    <rect x="160" y="76" width="64" height="16" fill="#4A9EFF"/>
+    <text x="166" y="88" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF" text-rendering="geometricPrecision">car 0.92</text>
 
-    <!-- Detection box 3: dog -->
-    <rect x="300" y="100" width="90" height="100" fill="none" stroke="#E8B547" stroke-width="1.5"/>
-    <rect x="300" y="84" width="60" height="16" fill="#4A9EFF"/>
-    <text x="304" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF">dog 0.78</text>
+    <!-- 检测框 3: dog -->
+    <rect x="296" y="132" width="84" height="68" fill="none" stroke="#E8B547" stroke-width="1.6"/>
+    <rect x="296" y="116" width="58" height="16" fill="#4A9EFF"/>
+    <text x="302" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#FFFFFF" text-rendering="geometricPrecision">dog 0.78</text>
+
+    <!-- 帧编号 -->
+    <text x="396" y="270" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="10" fill="#6B7280" text-anchor="end">runs/detect/exp</text>
   </g>
 
-  <!-- Bottom caption -->
-  <text x="56" y="340" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#6B7280">yolov5s.pt · NMS · COCO 80 classes</text>
+  <!-- 底部技术栈条 -->
+  <text x="56" y="338" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280">yolov5s.pt  ·  NMS  ·  CSPDarknet + PANet  ·  640 input</text>
 </svg>

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" width="100%" role="img" aria-labelledby="term-title term-desc">
+  <title id="term-title">使用命令</title>
+  <desc id="term-desc">YOLOv5 推理与训练命令卡片。左侧为推理命令 python detect.py,右侧为可选训练命令 python train.py。</desc>
+
+  <!-- 画布背景 -->
+  <rect width="1200" height="200" fill="#0B0F14" rx="16"/>
+
+  <!-- 两个命令卡片 -->
+  <g transform="translate(48 28)">
+    <!-- 卡片 1: 推理(主用,琥珀高亮) -->
+    <g>
+      <rect width="540" height="144" rx="10" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <rect x="0" y="0" width="540" height="4" rx="2" fill="#E8B547"/>
+
+      <!-- 顶部:标题 + 标签 -->
+      <text x="20" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#E8B547" letter-spacing="1.2">INFERENCE</text>
+      <text x="520" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="end">推理</text>
+
+      <!-- 终端窗口控件条 -->
+      <g transform="translate(20 44)">
+        <rect width="500" height="32" rx="4" fill="#0B0F14" stroke="#2A2F36" stroke-width="1"/>
+        <text x="12" y="21" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280">$</text>
+        <text x="28" y="21" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#E8E4D9">python detect.py --weights yolov5s.pt --source test_images/</text>
+      </g>
+
+      <!-- 输出说明 -->
+      <text x="20" y="100" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="13" fill="#9CA3AF" text-rendering="geometricPrecision">输出:runs/detect/exp/ · 含边界框 + 类别 + 置信度</text>
+      <text x="20" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280">本仓库 results/ 即由该命令生成</text>
+    </g>
+
+    <!-- 卡片 2: 训练(可选,冷蓝) -->
+    <g transform="translate(564 0)">
+      <rect width="540" height="144" rx="10" fill="#1A1F26" stroke="#2A2F36" stroke-width="1"/>
+      <rect x="0" y="0" width="540" height="4" rx="2" fill="#4A9EFF"/>
+
+      <text x="20" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#4A9EFF" letter-spacing="1.2">TRAINING</text>
+      <text x="520" y="30" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280" text-anchor="end">可选微调</text>
+
+      <g transform="translate(20 44)">
+        <rect width="500" height="32" rx="4" fill="#0B0F14" stroke="#2A2F36" stroke-width="1"/>
+        <text x="12" y="21" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#6B7280">$</text>
+        <text x="28" y="21" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#E8E4D9">python train.py --weights yolov5s.pt --data coco.yaml --epochs 50</text>
+      </g>
+
+      <text x="20" y="100" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif' font-size="13" fill="#9CA3AF" text-rendering="geometricPrecision">输出:runs/train/exp/ · 含 weights + 指标曲线</text>
+      <text x="20" y="124" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="11" fill="#6B7280">本仓库未训练,仅用预训练权重</text>
+    </g>
+  </g>
+</svg>
